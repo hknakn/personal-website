@@ -2,26 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 240 240 245;
+    --foreground: 0 0 0;
+    --card: 255 255 255;
+    --card-foreground: 0 0 0;
+    --primary: 0 122 255;
+    --primary-foreground: 255 255 255;
+    --secondary: 242 242 247;
+    --secondary-foreground: 0 0 0;
+    --muted: 242 242 247;
+    --muted-foreground: 128 128 128;
+    --accent: 0 122 255;
+    --accent-foreground: 255 255 255;
+    --border: 229 229 234;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 28 28 30;
+    --card-foreground: 255 255 255;
+    --primary: 10 132 255;
+    --primary-foreground: 255 255 255;
+    --secondary: 44 44 46;
+    --secondary-foreground: 255 255 255;
+    --muted: 44 44 46;
+    --muted-foreground: 174 174 178;
+    --accent: 10 132 255;
+    --accent-foreground: 255 255 255;
+    --border: 39 39 41;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .ios-shadow {
+    @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)];
+  }
+  .ios-shadow-sm {
+    @apply shadow-[0_2px_8px_rgb(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgb(0,0,0,0.1)];
+  }
+  .ios-card {
+    @apply bg-white/80 dark:bg-[#1C1C1E]/80 backdrop-blur-xl border border-white/20 dark:border-white/10;
+  }
+  .ios-button {
+    @apply bg-primary/90 hover:bg-primary text-white transition-colors will-change-transform;
+  }
+  .ios-button-secondary {
+    @apply bg-[#F2F2F7] dark:bg-[#2C2C2E] text-black dark:text-white hover:bg-[#E5E5EA] dark:hover:bg-[#3A3A3C] transition-colors will-change-transform;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .animate-in {
+    opacity: 0;
+    animation: enter 0.4s ease-out forwards;
   }
+  
+  .slide-in-from-bottom {
+    opacity: 0;
+    animation: slideInFromBottom 0.5s ease-out forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+/* Premium button animations */
+.button-bounce {
+  @apply will-change-transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.button-bounce:hover {
+  transform: scale(1.02) translateZ(0);
+}
+
+.button-bounce:active {
+  transform: scale(0.95) translateZ(0);
 }
