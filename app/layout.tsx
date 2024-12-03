@@ -11,15 +11,39 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Hakan Akin | Senior React Native Developer",
-  description: "Senior React Native Developer with over 6 years of experience",
+  description: "Senior React Native Developer with over 6 years of experience in building high-quality mobile applications",
+  metadataBase: new URL('https://hakanakin.dev'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Hakan Akin | Senior React Native Developer',
+    description: 'Senior React Native Developer with over 6 years of experience in building high-quality mobile applications',
+    url: 'https://hakanakin.dev',
+    siteName: 'Hakan Akin',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Hakan Akin | Senior React Native Developer',
+    card: 'summary_large_image',
+    description: 'Senior React Native Developer with over 6 years of experience in building high-quality mobile applications',
+  },
   icons: {
-    icon: [
-      {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>",
-        type: "image/svg+xml",
-      }
-    ]
-  }
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png"
+  },
 };
 
 export default function RootLayout({
