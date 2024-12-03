@@ -1,5 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
 interface Experience {
   company: string;
   location: string;
@@ -17,8 +15,9 @@ const experiences: Experience[] = [
     position: "Senior React Native Developer",
     period: "Aug 2023 - Dec 2024",
     type: "Remote",
-    description: "Collaborated with the team to build an AI backed travel suggestion and booking app from scratch. Developed UI system, screens and core features. Prepared the app for a successful product launch.",
-    technologies: ["Web", "iOS", "Android"]
+    description:
+      "Collaborated with the team to build an AI backed travel suggestion and booking app from scratch. Developed UI system, screens and core features. Prepared the app for a successful product launch.",
+    technologies: ["Web", "iOS", "Android"],
   },
   {
     company: "Trustworthy",
@@ -26,8 +25,9 @@ const experiences: Experience[] = [
     position: "Senior React Native Developer",
     period: "Dec 2021 - Jul 2023",
     type: "Remote",
-    description: "An app that helps families securely organize, store and optimize their important documents. Worked on redesigning the app, implemented new features, ensured web-mobile parity, created over 50 test scenarios.",
-    technologies: ["Web", "iOS"]
+    description:
+      "An app that helps families securely organize, store and optimize their important documents. Worked on redesigning the app, implemented new features, ensured web-mobile parity, created over 50 test scenarios.",
+    technologies: ["Web", "iOS"],
   },
   {
     company: "Tikla Gelsin",
@@ -35,8 +35,9 @@ const experiences: Experience[] = [
     position: "React / React Native Developer",
     period: "Jan 2021 - Dec 2021",
     type: "Remote",
-    description: "Led the handover process and became the first in-house developer for the project, one of Turkey's largest food delivery apps with over 2 million users. Focused primarily on mobile app, implementing new features and UI enhancements, while also contributing to the web platform to optimize the overall user experience and fixing bugs.",
-    technologies: ["Web", "iOS", "Android"]
+    description:
+      "Led the handover process and became the first in-house developer for the project, one of Turkey's largest food delivery apps with over 2 million users. Focused primarily on mobile app, implementing new features and UI enhancements, while also contributing to the web platform to optimize the overall user experience and fixing bugs.",
+    technologies: ["Web", "iOS", "Android"],
   },
   {
     company: "Kompanion",
@@ -44,8 +45,9 @@ const experiences: Experience[] = [
     position: "React / React Native Developer",
     period: "Oct 2019 - Jan 2021",
     type: "Remote",
-    description: "Developed a highly successful personal fitness coaching app from scratch that attracted over 2 million users worldwide. Played a crucial role in designing and implementing key features and UI that helps users achieve their health and well-being goals.",
-    technologies: ["Web", "iOS", "Android"]
+    description:
+      "Developed a highly successful personal fitness coaching app from scratch that attracted over 2 million users worldwide. Played a crucial role in designing and implementing key features and UI that helps users achieve their health and well-being goals.",
+    technologies: ["Web", "iOS", "Android"],
   },
   {
     company: "DataLiva",
@@ -53,9 +55,10 @@ const experiences: Experience[] = [
     position: "Fullstack Developer",
     period: "Jan 2018 - Oct 2019",
     type: "Office",
-    description: "Member of the R&D team of the web and desktop app team that develops corporate budgeting, ERP and SAP solutions. Apps are used by large sized companies.",
-    technologies: ["Web"]
-  }
+    description:
+      "Member of the R&D team of the web and desktop app team that develops corporate budgeting, ERP and SAP solutions. Apps are used by large sized companies.",
+    technologies: ["Web"],
+  },
 ];
 
 export function Experience() {
@@ -65,7 +68,10 @@ export function Experience() {
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-in bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 via-foreground/70 to-foreground/90">
           Experience
         </h2>
-        <p className="animate-in [--delay:200ms] text-sm sm:text-base text-muted-foreground/80 max-w-[85%] sm:max-w-[90%]" style={{ animationDelay: "200ms" }}>
+        <p
+          className="animate-in [--delay:200ms] text-sm sm:text-base text-muted-foreground/80 max-w-[85%] sm:max-w-[90%]"
+          style={{ animationDelay: "200ms" }}
+        >
           My professional journey in software development
         </p>
       </div>
@@ -75,8 +81,8 @@ export function Experience() {
           <div className="absolute left-5 sm:left-8 top-3 h-[calc(100%-24px)] w-px bg-gradient-to-b from-foreground/20 via-foreground/10 to-foreground/20" />
           <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="animate-in slide-in-from-bottom group relative ml-4"
                 style={{ animationDelay: `${(index + 2) * 150}ms` }}
               >
@@ -95,7 +101,9 @@ export function Experience() {
                         </div>
                       </div>
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-xs sm:text-sm text-muted-foreground/90 font-medium">
-                        <span>{exp.company} • {exp.location}</span>
+                        <span>
+                          {exp.company} • {exp.location}
+                        </span>
                         <span className="hidden sm:inline">•</span>
                         <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] sm:text-xs font-medium">
                           {exp.type}
@@ -126,4 +134,4 @@ export function Experience() {
       </div>
     </section>
   );
-} 
+}
